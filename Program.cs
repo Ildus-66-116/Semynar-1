@@ -1,4 +1,4 @@
-﻿
+﻿// Семинар 1
 /*
 Console.WriteLine("Hello");
 Console.WriteLine("Hello");
@@ -68,3 +68,52 @@ Console.WriteLine("Hello");
 
 // for(int i = 0; i < 10; i+=2)
 //     Console.Write($"{i} ");
+
+//Семинар 2
+
+// Console.Clear();
+// int number = new Random().Next(10, 100); // [10; 99]
+// Console.WriteLine(number);
+// int n1 = number / 10;
+// int n2 = number % 10;
+// // 1 == 2, 1 > 2, 1 < 2
+// if (n1 > n2)
+//     Console.WriteLine(n1);
+// else
+//     Console.WriteLine(n2);
+
+// Console.Clear();
+// int number = new Random().Next(100, 1000); // [100; 999]
+// Console.WriteLine(number);
+// int n1 = number / 100;
+// int n2 = number % 10;
+// Console.Write (n1);
+// Console.Write (n2);
+
+// Console.Clear();
+// Console.Write("Введите 1-ое число: ");
+// int n = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите 2-ое число: ");
+// int m = int.Parse(Console.ReadLine()!);
+// if (n % m == 0)
+// Console.WriteLine("Кратно");
+// else
+// Console.WriteLine ($"Не кратно, остаток {n % m}");
+
+// Console.Clear();
+// Console.Write("Введите число: ");
+// int n = int.Parse(Console.ReadLine()!);
+// if (n % 161 == 0) // n % 7 == 0 && n % 23 == 0
+//     Console.WriteLine("yes");
+// else
+//     Console.WriteLine("no");
+
+// Console.Clear();
+// Console.Write("Введите 1-ое число: ");
+// int n = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите 2-ое число: ");
+// int m = int.Parse(Console.ReadLine()!);
+// if (n * n == m || m * m == n)
+// Console.WriteLine("yes");
+// else 
+// Console.WriteLine("no");
