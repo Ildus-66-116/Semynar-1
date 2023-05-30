@@ -199,3 +199,148 @@ Console.WriteLine("Hello");
 //     Console.WriteLine("yes");
 // else
 //     Console.WriteLine("no");
+
+
+// // **Теория(Char)**
+
+// // "String"
+// // 'String'
+// // char s = 'f';
+// // string stroka = "5";
+// // //               0123456789...
+// // Console.WriteLine(Convert.ToInt32(stroka[0].ToString()) * 5);
+
+// // string -> int (+)
+// // char -> int (-) (utf-8)
+// // char -> string -> int
+
+// // 2145235 = 2 + 1 + 4 + 5 + 2 + 3 + 5 = 22
+// // -2147000000 < int < 2147000000
+
+// Console.Clear();
+// Console.Write("Введите число: ");
+// string number = Console.ReadLine()!;
+// int summa = 0;
+// for (int i = 0; i < number.Length; i++)
+//     summa = summa + Convert.ToInt32(number[i].ToString());
+// Console.WriteLine(summa);
+// ```
+
+// // **Demo Task # 3**
+
+// Console.Clear();
+// Console.Write("Введите координату Х: ");
+// double x = Double.Parse(Console.ReadLine()!);
+// Console.Write("Введите координату Y: ");
+// double y = Double.Parse(Console.ReadLine()!);
+// if (x > 0 && y > 0)
+//     Console.WriteLine("I");
+// else if (x < 0 && y > 0)
+//     Console.WriteLine("II");
+// else if (x < 0 && y < 0)
+//     Console.WriteLine("III");
+// else
+//     Console.WriteLine("IV");
+// ```
+
+// // **Задача 18**
+
+// Console.Clear();
+// Console.Write("Введите номер четверти: ");
+// double x = Double.Parse(Console.ReadLine()!);
+// while (x < 1 || x > 4)
+// {
+//     Console.Write("Вы ошиблись!\nВведите номер четверти: ");
+//     x = Double.Parse(Console.ReadLine()!);
+// }
+// if (x == 1)
+//     Console.WriteLine("x > 0 && y > 0");
+// else if (x == 2)
+//     Console.WriteLine("x < 0 && y > 0");
+// else if (x == 3)
+//     Console.WriteLine("x < 0 && y < 0");
+// else
+//     Console.WriteLine("x > 0 && y < 0");
+// ```
+
+// // **Задача 21**
+
+// Console.Clear();
+// Console.Write("Координату X(1): ");
+// double x1 = double.Parse(Console.ReadLine()!);
+// Console.Write("Координату Y(1): ");
+// double y1 = double.Parse(Console.ReadLine()!);
+// Console.Write("Координату X(2): ");
+// double x2 = double.Parse(Console.ReadLine()!);
+// Console.Write("Координату Y(2): ");
+// double y2 = double.Parse(Console.ReadLine()!);
+// double S = Math.Sqrt(Math.Pow(x1 - x2, 2) + Math.Pow(y2 - y1, 2));
+// Console.WriteLine($"Расстояние равно {Math.Round(S, 3)}");
+// // pow - возведение в степень
+// // round - округление числа
+// // sqrt - квадратный корень числа
+// ```
+
+// // **Задача 22**
+
+// Console.Clear();
+// Console.Write("Введите число: ");
+// int n = int.Parse(Console.ReadLine()!);
+// n = Math.Abs(n); // Модуль числа
+// for (int i = 1; i <= n; i++)
+//     Console.Write($"{i * i} ");
+// ```
+
+// // **Теория(array)**
+
+// // array
+// Console.Clear();
+// Console.Write("Введите кол-во элементов массива: ");
+// int n = int.Parse(Console.ReadLine()!);
+// int[] array = new int[n]; // Массив по умолчанию(числовой) заполняется нулями
+// for (int i = 0; i < array.Length; i++)
+//     array[i] = new Random().Next(1, 11); // [1; 10]
+// Console.WriteLine($"Результат: [{string.Join(", ", array)}]");
+// ```
+
+// // **Задача 24**
+
+// Console.Clear();
+// Console.Write("Введите число: ");
+// int n = int.Parse(Console.ReadLine()!);
+// Console.WriteLine($"Сумма от 1 до {n}: {((n + 1) / 2.0) * n}");
+// ```
+
+// // **Задача 26**
+
+// ```csharp
+// Console.Clear();
+// Console.Write("Введите число: ");
+// int n = int.Parse(Console.ReadLine()!);
+// int count = 0, m = n;
+// while (n > 0)
+// {
+//     n = n / 10;
+//     count++;
+// }
+// Console.WriteLine($"В числе {m} {count} цифр");
+// ```
+
+// // **Задача 28**
+
+// ```csharp
+// Console.Clear();
+// Console.Write("Введите число: ");
+// int n = int.Parse(Console.ReadLine()!), result = 1;
+// for (int i = 2; i <= n; i++)
+//     result *= i;
+// Console.WriteLine($"{n}! = {result}");
+// ```
+
+// // **Задача 30**
+
+// Console.Clear();
+// int[] array = new int[8];
+// for (int i = 0; i < array.Length; i++)
+//     array[i] = new Random().Next(0, 2);
+// Console.WriteLine($"Результат: [{string.Join(", ", array)}]");
