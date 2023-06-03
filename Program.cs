@@ -344,3 +344,214 @@ Console.WriteLine("Hello");
 // for (int i = 0; i < array.Length; i++)
 //     array[i] = new Random().Next(0, 2);
 // Console.WriteLine($"Результат: [{string.Join(", ", array)}]");
+
+// Семинар 5 Теория по функциям и процедурам
+
+// Методы(ООП)
+// void - процедура
+// TypeData - функции
+
+// void f(ref int n)
+// {
+//     n += 5; // n = n + 5;
+// }
+
+
+// Console.Clear();
+// int m = 10;
+// f(ref m);
+// Console.WriteLine(m);
+
+
+// void f(int[] n)
+// {
+//     n[0] = n[0] + 5;
+// }
+
+
+// Console.Clear();
+// int[] m = {5, 3, 90, 16, 82};
+// f(m);
+// Console.WriteLine($"[{string.Join(", ", m)}]");
+
+
+// void f(int n, int m=15)
+// {
+//     Console.WriteLine($"{n} + {m} = {n + m}");
+// }
+
+
+// Console.Clear();
+// f(10, 4);
+
+// Пользователь вводит 2 числа. Необходимо вывести максимальное из них
+
+// int MaxNumbers(int n, int m)
+// {
+//     if (n > m) // -> n <= m
+//         return n;
+//     return m;
+// }
+
+
+// Console.Clear();
+// int result = MaxNumbers(10, 10);
+// Console.WriteLine(result);
+
+// void InputArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//         array[i] = new Random().Next(-9, 10); // [-9; 9]
+// }
+
+
+// void SearchSum(int[] array)
+// {
+//     int sumPositivе = 0, allSum = 0;
+//     foreach (int element in array)
+//     {
+//         if (element > 0)
+//             sumPositivе += element;
+//         allSum += element;
+//     }
+//     Console.WriteLine($"Сумма положительных чисел равна: {sumPositivе}");
+//     Console.WriteLine($"Сумма отрицательных чисел равна: {allSum - sumPositivе}");
+// }
+
+
+// Console.Clear();
+// Console.Write("Введите кол-во элементов массива: ");
+// int n = int.Parse(Console.ReadLine()!);
+// int[] array = new int[n];
+// InputArray(array);
+// Console.WriteLine($"[{string.Join(", ", array)}]");
+// SearchSum(array);
+// // foreach (int element in array)
+// // {
+// //     Console.WriteLine(element);
+// // }
+
+//Задача 32
+// void InputArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     array[i] = new Random().Next(-9, 10);
+// }
+
+// void Zamena(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     array[i] = array [i] * -1;
+// }
+
+// Console.Clear();
+// Console.Write("Введите кол-во элементов массива: ");
+// int n = int.Parse(Console.ReadLine()!);
+// int[] array = new int[n];
+// InputArray(array);
+// Console.WriteLine($"[{string.Join(", ", array)}]");
+// Zamena(array);
+// Console.WriteLine($"[{string.Join(", ", array)}]");
+
+// Задача 33
+
+// void InputArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//         array[i] = new Random().Next(-50, 51); // [-50; 50]
+// }
+
+
+// string SearchNumber(int[] array, int number)
+// {
+//     foreach (int element in array)
+//     {
+//         if (element == number)
+//             return "yes";
+//     }
+//     return "no";
+// }
+
+
+// Console.Clear();
+// Console.Write("Введите кол-во элементов массива: ");
+// int n = int.Parse(Console.ReadLine()!);
+// int[] array = new int[n];
+// InputArray(array);
+// Console.WriteLine($"Начальный массив: [{string.Join(", ", array)}]");
+// Console.Write("Введите число, которое хотите найти: ");
+// int k = int.Parse(Console.ReadLine()!);
+// Console.WriteLine(SearchNumber(array, k));
+
+// Задача 35
+
+// void InputArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//         array[i] = new Random().Next(-100, 101); // [-100; 100]
+// }
+
+
+// int CountNumbers(int[] array)
+// {
+//     int count = 0;
+//     foreach (int element in array)
+//     {
+//         if (element >= 10 && element <= 99)
+//             count++;
+//     }
+//     return count;
+// }
+
+
+// Console.Clear();
+// // Console.Write("Введите кол-во элементов массива: ");
+// // int n = int.Parse(Console.ReadLine()!);
+// int[] array = new int[123];
+// InputArray(array);
+// Console.WriteLine($"Начальный массив: [{string.Join(", ", array)}]");
+// Console.WriteLine(CountNumbers(array)); 
+
+
+// Задача 37
+
+// void InputArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//         array[i] = new Random().Next(0, 11); // [0, 10]
+// }
+
+
+// int[] proizvedenie(int[] array, int[] result)
+// {
+//     for (int i = 0; i < result.Length; i++)
+//         result[i] = array[i] * array[array.Length - 1 - i];
+    
+//     return result;
+// }
+
+
+// Console.Clear();
+// Console.Write("Введите кол-во элементов массива: ");
+// int n = int.Parse(Console.ReadLine()!);
+// int[] array = new int[n];
+// int[] result = new int[n / 2 + n % 2];
+// InputArray(array);
+// Console.WriteLine($"Начальный массив: [{string.Join(", ", array)}]");
+// Console.WriteLine($"Конечный массив: [{string.Join(", ", proizvedenie(array, result))}]");
+
+//Генерация дробных чисел
+
+// void InputArray(double[] array)
+// {
+//     int end = 30, begin = 10;
+//     for (int i = 0; i < array.Length; i++)
+//         array[i] = Math.Round(new Random().NextDouble() * (end - begin) + begin, 2);
+// }
+
+// Console.Clear();
+// Console.Write("Введите кол-во элементов массива: ");
+// int n = int.Parse(Console.ReadLine()!);
+// double[] array = new double[n];
+// InputArray(array);
+// Console.WriteLine($"Начальный массив: [{string.Join(", ", array)}]");
