@@ -682,12 +682,40 @@ Console.WriteLine("Hello");
 
 //Задача 48
 
+// void InputMatrix(int[,] matrix)
+// {
+//     for(int i = 0; i < matrix.GetLength(0); i++) // GetLength(0) количество строк
+//     {
+//         for(int j = 0; j < matrix.GetLength(1); j++) // GetLength(1) количестов столбцов
+//            matrix[i, j] = i + j;
+//     }
+// }
+
+// void PrintMatrix(int[,] matrix)
+// {
+//     for(int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for(int j = 0; j < matrix.GetLength(1); j++)
+//             Console.Write($"{matrix[i, j]}\t");         // \t табуляция
+//         Console.WriteLine();
+//     }
+// }
+
+// Console.Clear();
+// Console.Write("Введите размеры массива: ");
+// int[] size = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
+// int[,] matrix = new int[size[0], size[1]];
+// InputMatrix(matrix);
+// PrintMatrix(matrix);
+
+// Задача 49
+
 void InputMatrix(int[,] matrix)
 {
     for(int i = 0; i < matrix.GetLength(0); i++) // GetLength(0) количество строк
     {
         for(int j = 0; j < matrix.GetLength(1); j++) // GetLength(1) количестов столбцов
-           matrix[i, j] = i + j;
+            matrix[i, j] = new Random().Next(1, 11);
     }
 }
 
@@ -701,9 +729,24 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
+void KvadratNechetMatrix(int[,] matrix)
+{
+    for(int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for(int j = 0; j < matrix.GetLength(1); j++)
+        {
+            if(i % 2 == 1 && j % 2 == 1)
+            matrix[i, j] = matrix[i, j] * matrix[i, j];
+        }
+    }
+}
+
 Console.Clear();
 Console.Write("Введите размеры массива: ");
 int[] size = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
 int[,] matrix = new int[size[0], size[1]];
 InputMatrix(matrix);
+PrintMatrix(matrix);
+Console.WriteLine();
+KvadratNechetMatrix(matrix);
 PrintMatrix(matrix);
