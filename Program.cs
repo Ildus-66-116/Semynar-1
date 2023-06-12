@@ -639,13 +639,43 @@ Console.WriteLine("Hello");
 
 // Задача 45 копирование
 
-Console.Clear();
-int[] a = {1, 2, 3, 4, 5};
-int[] b = new int[a.Length];
+// Console.Clear();
+// int[] a = {1, 2, 3, 4, 5};
+// int[] b = new int[a.Length];
 
-for (int i = 0; i < b.Length; i++)
-    b[i] = a[i];
+// for (int i = 0; i < b.Length; i++)
+//     b[i] = a[i];
     
-b[0] = b[0] + 5;
-Console.WriteLine(string.Join(" ", a));
-Console.WriteLine(string.Join(" ", b));
+// b[0] = b[0] + 5;
+// Console.WriteLine(string.Join(" ", a));
+// Console.WriteLine(string.Join(" ", b));
+
+// Семинар 7 Двумерные массивы
+
+//Задача 46
+
+void InputMatrix(int[,] matrix)
+{
+    for(int i = 0; i < matrix.GetLength(0); i++) // GetLength(0) количество строк
+    {
+        for(int j = 0; j < matrix.GetLength(1); j++) // GetLength(1) количестов столбцов
+            matrix[i, j] = new Random().Next(-30, 30);
+    }
+}
+
+void PrintMatrix(int[,] matrix)
+{
+    for(int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for(int j = 0; j < matrix.GetLength(1); j++)
+            Console.Write($"{matrix[i, j]}\t");         // \t табуляция
+        Console.WriteLine();
+    }
+}
+
+Console.Clear();
+Console.Write("Введите размеры массива: ");
+int[] size = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
+int[,] matrix = new int[size[0], size[1]];
+InputMatrix(matrix);
+PrintMatrix(matrix);
