@@ -654,12 +654,40 @@ Console.WriteLine("Hello");
 
 //Задача 46
 
+// void InputMatrix(int[,] matrix)
+// {
+//     for(int i = 0; i < matrix.GetLength(0); i++) // GetLength(0) количество строк
+//     {
+//         for(int j = 0; j < matrix.GetLength(1); j++) // GetLength(1) количестов столбцов
+//             matrix[i, j] = new Random().Next(-30, 30);
+//     }
+// }
+
+// void PrintMatrix(int[,] matrix)
+// {
+//     for(int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for(int j = 0; j < matrix.GetLength(1); j++)
+//             Console.Write($"{matrix[i, j]}\t");         // \t табуляция
+//         Console.WriteLine();
+//     }
+// }
+
+// Console.Clear();
+// Console.Write("Введите размеры массива: ");
+// int[] size = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
+// int[,] matrix = new int[size[0], size[1]];
+// InputMatrix(matrix);
+// PrintMatrix(matrix);
+
+//Задача 48
+
 void InputMatrix(int[,] matrix)
 {
     for(int i = 0; i < matrix.GetLength(0); i++) // GetLength(0) количество строк
     {
         for(int j = 0; j < matrix.GetLength(1); j++) // GetLength(1) количестов столбцов
-            matrix[i, j] = new Random().Next(-30, 30);
+           matrix[i, j] = i + j;
     }
 }
 
