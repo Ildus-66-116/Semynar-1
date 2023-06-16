@@ -753,44 +753,271 @@ Console.WriteLine("Hello");
 
 // Задача 51
 
+// void InputMatrix(int[,] matrix)
+// {
+//     for(int i = 0; i < matrix.GetLength(0); i++) // GetLength(0) количество строк
+//     {
+//         for(int j = 0; j < matrix.GetLength(1); j++) // GetLength(1) количестов столбцов
+//             matrix[i, j] = new Random().Next(1, 11);
+//     }
+// }
+
+// void PrintMatrix(int[,] matrix)
+// {
+//     for(int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for(int j = 0; j < matrix.GetLength(1); j++)
+//             Console.Write($"{matrix[i, j]}\t");         // \t табуляция
+//         Console.WriteLine();
+//     }
+// }
+
+// int GlavnDiagMatrix(int[,] matrix)
+// {
+//     int summa = 0;
+//     for(int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for(int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             if(i ==  j )
+//             summa = summa + matrix[i, j];
+//         }
+//     }
+//     return summa;
+// }
+
+// Console.Clear();
+// Console.Write("Введите размеры массива: ");
+// int[] size = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
+// int[,] matrix = new int[size[0], size[1]];
+// InputMatrix(matrix);
+// PrintMatrix(matrix);
+// Console.WriteLine();
+// Console.WriteLine($"Результат: {GlavnDiagMatrix(matrix)}");
+
+
+// Семинар 8
+
+//Задача 53 
+
+
+// void InputMatrix(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//             matrix[i, j] = new Random().Next(1, 31); // [1; 30]
+//     }
+// }
+
+// void PrintMatrix(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//             Console.Write($"{matrix[i, j]} \t");
+//         Console.WriteLine();
+//     }
+// }
+
+// void ReverseMatrix(int[,] matrix)
+// {
+//     for(int j = 0; j < matrix.GetLength(1); j++)
+//     {
+//         int temp = matrix[0, j];
+//         matrix[0, j] = matrix[matrix.GetLength(0) - 1, j];
+//         matrix[matrix.GetLength(0) - 1, j] = temp;
+//     }
+// }
+
+// Console.Clear();
+// Console.Write("Введите размер массива: ");
+// int[] size = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
+// int[,] matrix = new int[size[0], size[1]];
+// InputMatrix(matrix);
+// PrintMatrix(matrix);
+// Console.WriteLine("\n\n\n");
+// ReverseMatrix(matrix);
+// PrintMatrix(matrix);
+
+// Задача 55
+
+// void InputMatrix(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//             matrix[i, j] = new Random().Next(1, 31); // [1; 30]
+//     }
+// }
+
+// void PrintMatrix(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//             Console.Write($"{matrix[i, j]} \t");
+//         Console.WriteLine();
+//     }
+// }
+
+// void ReverseMatrix(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = i + 1; j < matrix.GetLength(1); j++)
+//         {
+//             (matrix[i, j], matrix[j, i]) = (matrix[j, i], matrix[i, j]);
+//             // int temp = matrix[i, j];
+//             // matrix[i, j] = matrix[j, i];
+//             // matrix[j, i] = temp; 
+//         }
+//     }
+// }
+
+// Console.Clear();
+// Console.Write("Введите размер массива: ");
+// int[] size = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
+// while (size[0] != size[1])
+// {
+//     Console.Write("Вы ошиблись!\nВведите размер массива: ");
+//     size = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
+// }
+// int[,] matrix = new int[size[0], size[0]];
+// InputMatrix(matrix);
+// PrintMatrix(matrix);
+// Console.WriteLine("\n\n\n");
+// ReverseMatrix(matrix);
+// PrintMatrix(matrix);
+
+
+// Задача 57
+
+// bool CheckValue(int[] array, int number)
+// {
+//     foreach (int element in array)
+//     {
+//         if(element == number)
+//             return false;
+//     }
+//     return true;
+// }
+
+
+// int InputMatrix(int[,] matrix, int[] array)
+// {
+//     int countNumbers = 0;
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             matrix[i, j] = new Random().Next(1, 11); // [1; 10]
+//             if (CheckValue(array, matrix[i, j]))
+//             {
+//                 array[countNumbers] = matrix[i, j];
+//                 countNumbers++;
+//             }
+//         }
+//     }
+//     return countNumbers;
+// }
+
+// void PrintMatrix(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//             Console.Write($"{matrix[i, j]} \t");
+//         Console.WriteLine();
+//     }
+// }
+
+// void ReverseMatrix(int[,] matrix, int[] array, int countNumbers)
+// {
+//     for(int k = 0; k < countNumbers; k++)
+//     {
+//         int count = 0;
+//         for (int i = 0; i < matrix.GetLength(0); i++)
+//         {
+//             for (int j = 0; j < matrix.GetLength(1); j++)
+//             {
+//                 if (matrix[i, j] == array[k])
+//                     count++;
+//             }
+//         }
+//         Console.WriteLine($"Число {array[k]} встретилось ровно {count} раз");
+//     }
+// }
+
+// Console.Clear();
+// Console.Write("Введите размер массива: ");
+// int[] size = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
+// int[,] matrix = new int[size[0], size[1]];
+// int[] helpArray = new int[size[0] * size[1]];
+// int countValues = InputMatrix(matrix, helpArray);
+// PrintMatrix(matrix);
+// Console.WriteLine("\n\n\n");
+// ReverseMatrix(matrix, helpArray, countValues);
+// PrintMatrix(matrix);
+
+// Задача 59
+
 void InputMatrix(int[,] matrix)
 {
-    for(int i = 0; i < matrix.GetLength(0); i++) // GetLength(0) количество строк
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for(int j = 0; j < matrix.GetLength(1); j++) // GetLength(1) количестов столбцов
-            matrix[i, j] = new Random().Next(1, 11);
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            matrix[i, j] = new Random().Next(1, 11); // [1; 10]
+        }
     }
 }
 
 void PrintMatrix(int[,] matrix)
 {
-    for(int i = 0; i < matrix.GetLength(0); i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for(int j = 0; j < matrix.GetLength(1); j++)
-            Console.Write($"{matrix[i, j]}\t");         // \t табуляция
+        for (int j = 0; j < matrix.GetLength(1); j++)
+            Console.Write($"{matrix[i, j]} \t");
         Console.WriteLine();
     }
 }
 
-int GlavnDiagMatrix(int[,] matrix)
+void ReverseMatrix(int[,] matrix)
 {
-    int summa = 0;
-    for(int i = 0; i < matrix.GetLength(0); i++)
+    int minValue = matrix[0, 0], minRow = 0, minColumn = 0;
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for(int j = 0; j < matrix.GetLength(1); j++)
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if(i ==  j )
-            summa = summa + matrix[i, j];
+            if (minValue > matrix[i, j])
+            {
+                minValue = matrix[i, j];
+                minRow = i;
+                minColumn = j;
+            }
         }
     }
-    return summa;
+    Console.WriteLine($"Минимум найден {minValue}({minRow + 1}, {minColumn + 1})");
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        if (i != minRow)
+        {
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                if (j != minColumn)
+                    Console.Write($"{matrix[i, j]} \t");
+            }
+            Console.WriteLine();
+        }
+    }
 }
 
 Console.Clear();
-Console.Write("Введите размеры массива: ");
+Console.Write("Введите размер массива: ");
 int[] size = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
 int[,] matrix = new int[size[0], size[1]];
 InputMatrix(matrix);
 PrintMatrix(matrix);
-Console.WriteLine();
-Console.WriteLine($"Результат: {GlavnDiagMatrix(matrix)}");
+Console.WriteLine("\n\n\n");
+ReverseMatrix(matrix);
